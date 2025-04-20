@@ -19,19 +19,7 @@ export function TodoCard() {
   const [todos, setTodos] = useState<Todo[]>([])
   const [newTodo, setNewTodo] = useState("")
 
-  // Add a function to fetch todos from the API
-  const fetchTodosFromAPI = async (userId: string) => {
-    try {
-      const response = await fetch(`/api/todos?userId=${userId}`)
-      if (!response.ok) {
-        throw new Error("Failed to fetch todos")
-      }
-      return await response.json()
-    } catch (error) {
-      console.error("Error fetching todos:", error)
-      return []
-    }
-  }
+  // Remove unused fetchTodosFromAPI function
 
   // Add a function to save a todo to the API
   const saveTodoToAPI = async (todo: Omit<Todo, "id">, userId: string) => {
@@ -173,7 +161,7 @@ export function TodoCard() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Today's Focus</CardTitle>
+        <CardTitle>Today&apos;s Focus</CardTitle>
         <CardDescription>Keep track of your important tasks</CardDescription>
       </CardHeader>
       <CardContent>

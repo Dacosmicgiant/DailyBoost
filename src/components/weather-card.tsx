@@ -1,5 +1,5 @@
 "use client"
-
+import Image from "next/image";
 import { useEffect, useState } from "react"
 import {
   Card,
@@ -66,11 +66,12 @@ export function WeatherCard() {
 
     if (weather.icon) {
       return (
-        <img
-          src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-          alt={weather.condition || "Weather"}
-          className="h-12 w-12"
-        />
+        <Image
+  src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+  alt="Weather icon"
+  width={50}
+  height={50}
+/>
       )
     }
 

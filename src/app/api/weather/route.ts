@@ -20,7 +20,8 @@ export async function GET(request: Request) {
       // Get user's IP address from headers for geolocation
       const headersList = await headers()
       const forwardedFor = headersList.get("x-forwarded-for")
-      const ip = forwardedFor ? forwardedFor.split(",")[0] : "127.0.0.1"
+      // Remove the unused variable or prefix with underscore
+      // const _ip = forwardedFor ? forwardedFor.split(",")[0] : "127.0.0.1"
 
       // For demo purposes, if we can't determine location, default to a major city
       // In a production app, you might want to use an IP geolocation service
